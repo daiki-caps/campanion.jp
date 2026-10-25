@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja" prefix="og: https://ogp.me/ns#">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8WZ6W2JW29"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8WZ6W2JW29');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
@@ -14,7 +22,7 @@
 
   <!-- OGP -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="学生へのPR・採用なら CAPS for Business｜学生12万人へダイレクトにリーチ">
+  <meta property="og:title" content="学生へのPR・採用なら CAPS for Business｜延べ12万人の学生へダイレクトにリーチ">
   <meta property="og:description" content="早慶・MARCH・日東駒専・関関同立の大学別LINEオープンチャット（10万人超）＆Instagramで採用・インターン集客・PR告知をご支援。まずは無料相談から。">
   <meta property="og:url" content="https://campanion.jp/corp/">
   <meta property="og:site_name" content="CAPS for Business">
@@ -354,7 +362,7 @@
   <div class="hero-inner">
     <div>
       <p class="hero-eyebrow">CAPS FOR BUSINESS</p>
-      <h1 class="hero-h1" id="hero-heading">学生<mark>12万人</mark>へ、<br>ダイレクトに届ける</h1>
+      <h1 class="hero-h1" id="hero-heading">延べ<mark>12万人</mark>の学生へ、<br>ダイレクトに届ける</h1>
       <p class="hero-sub">
         早慶・MARCH・日東駒専・関関同立の大学別コミュニティを通じて、<br>
         採用・インターン集客・PR告知を効率よく実現します。<br>
@@ -425,7 +433,7 @@
 
         <!-- 合計 -->
         <rect x="14" y="258" width="160" height="46" rx="10" fill="rgba(29,158,117,.1)" stroke="rgba(29,158,117,.22)" stroke-width="1"/>
-        <text x="94" y="276" text-anchor="middle" font-family="Noto Sans JP,sans-serif" font-size="8.5" fill="rgba(255,255,255,.45)">デジタル合計リーチ</text>
+        <text x="94" y="276" text-anchor="middle" font-family="Noto Sans JP,sans-serif" font-size="8.5" fill="rgba(255,255,255,.45)">デジタル延べリーチ</text>
         <text x="94" y="296" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="21" font-weight="600" fill="#5DCAA5">12<tspan font-size="13">万人以上</tspan></text>
       </svg>
     </div>
@@ -619,7 +627,7 @@
       </div>
       <div class="reach-panel rv d2" aria-label="リーチ規模">
         <div class="rp-num">12<span class="rp-unit">万+</span></div>
-        <div class="rp-lbl">デジタルチャネル合計リーチ</div>
+        <div class="rp-lbl">デジタルチャネル延べリーチ（重複を含む）</div>
         <div class="rp-bar">
           <div class="rp-head"><span class="rp-bname">LINEオープンチャット</span><span class="rp-bval">10万+</span></div>
           <div class="rp-track"><div class="rp-fill" data-w="83"></div></div>
@@ -761,6 +769,7 @@
     <div>
       <p class="footer-brand-name">CAPS for Business</p>
       <p class="footer-brand-desc">大学別コミュニティを通じた学生向けPR・採用・インターン集客支援サービス</p>
+      <p class="footer-brand-desc" style="margin-top:.8rem">運営：<a href="https://gritters.jp/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline">株式会社Gritters</a><br>東京都渋谷区道玄坂</p>
     </div>
     <div>
       <p class="footer-nav-label">SERVICES</p>
@@ -782,11 +791,10 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy">© 2026 CAPS All rights reserved.</p>
+    <p class="footer-copy">© 2026 株式会社Gritters / CAPS All rights reserved.</p>
     <div class="footer-legal">
       <a href="https://gritters.jp/" target="_blank" rel="noopener noreferrer">運営会社</a>
       <a href="#">プライバシーポリシー</a>
-      <a href="#">特定商取引法に基づく表記</a>
     </div>
   </div>
 </footer>
@@ -845,6 +853,19 @@
     const isOpen = item.classList.toggle('open');
     btn.setAttribute('aria-expanded', isOpen);
   }
+</script>
+<script>
+  // GA4: 無料相談ボタンのクリックを generate_lead として計測
+  (function(){
+    var pos = {'nav-btn':'header','m-cta':'mobile_menu','btn-p':'hero','cta-btn':'bottom_cta'};
+    document.querySelectorAll('a[href*="cal.com/gritters/caps"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        var loc = 'footer';
+        for (var c in pos) { if (a.classList.contains(c)) { loc = pos[c]; break; } }
+        if (typeof gtag === 'function') gtag('event', 'generate_lead', { cta_location: loc, link_url: a.href });
+      });
+    });
+  })();
 </script>
 </body>
 </html>
